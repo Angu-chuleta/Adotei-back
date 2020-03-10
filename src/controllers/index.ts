@@ -1,5 +1,4 @@
-import { userController} from './user.controller'
+import { userController } from './user.controller';
+import { petController } from './pet.controller';
 
-export {
-    userController
-}
+export { userController, petController };

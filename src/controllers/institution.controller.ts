@@ -1,7 +1,7 @@
-import { Request, Response } from 'express'
+import { Request, Response } from 'express';
 
 export const userController = {
-    getUsers(req: Request, res: Response) {
-        res.json([])
-    }
-}
+  getUsers(req: Request, res: Response) {
+    res.json([]);
+  },
+};

@@ -1,10 +1,14 @@
-import {Schema, model } from 'mongoose'
+import { Schema, model, Document } from 'mongoose';
 
-const PetSchema = new Schema({
+interface IPetModel extends Document {
+  name: string;
+}
+
+const PetSchema = new Schema<IPetModel>({
   name: {
-      type: String,
-      required: true
- },
-})
+    type: String,
+    required: true,
+  },
+});
 
-export default model('Pet', PetSchema)
+export default model<IPetModel>('Pet', PetSchema);
