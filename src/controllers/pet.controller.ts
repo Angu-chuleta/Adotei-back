@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { PetModel } from '../models';
 export const petController = {
-  async getPet(req: Request, res: Response) {
+  async getAllPet(req: Request, res: Response) {
     res.json(await PetModel.find());
   },
 
@@ -25,6 +25,18 @@ export const petController = {
       const pet = await PetModel.findById(petId);
       if (pet) {
         pet.name = name;
+        res.json(await pet.save());
+      }
+      res.status(400).json({ message: 'Pet não encontrado' });
+    } catch (error) {
+      res.status(400).json({ message: 'Pet não encontrado' });
+    }
+  },
+  async getOnePet(req: Request, res: Response) {
+    const petId = req.params.id;
+    try {
+      const pet = await PetModel.findById(petId);
+      if (pet) {
         res.json(await pet.save());
       }
       res.status(400).json({ message: 'Pet não encontrado' });
