@@ -1,0 +1,12 @@
+FROM node:12-slim
+
+WORKDIR /usr/src/app
+
+COPY package.json .
+ADD . /usr/src/app
+
+RUN npm install
+RUN npm run tsc
+
+CMD [ "npm", "start:prod" ]
+EXPOSE 3000
