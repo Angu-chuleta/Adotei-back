@@ -8,11 +8,8 @@ jobs:
     steps:
       - checkout
 
-      - setup_remote_docker:
-          docker_layer_caching: true
-
       # build and push Docker image
       - run: |
-          docker build -t CircleCI-Public/circleci-demo-docker:$TAG .
+          docker build -t icarodgl/$CIRCLE_PR_REPONAME:$TAG .
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-          docker push CircleCI-Public/circleci-demo-docker:$TAG
+          docker push icarodgl/$CIRCLE_PR_REPONAME:$TAG
