@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles --forceExit",
     "build": "rm -rf dist && tsc",
     "start:prod": "node ./dist/index.js"
   },
@@ -26,7 +26,12 @@
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.3",
     "@types/helmet": "0.0.45",
+    "@types/jest": "^25.1.4",
     "@types/mongoose": "^5.7.4",
+    "@types/supertest": "^2.0.8",
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2",
+    "ts-jest": "^25.2.1",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   },
