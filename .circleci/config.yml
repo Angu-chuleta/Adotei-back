@@ -3,7 +3,7 @@ image: ubuntu:16.04
 jobs:
   install-dependencies:
     docker:
-      - image: node:12-slim
+      - image: circleci/node:lts
     working_directory: ~/app
     steps:
       - checkout
@@ -21,7 +21,7 @@ jobs:
 
   build:
     docker:
-      - image: node:12-slim
+      - image: circleci/node:lts
     working_directory: ~/app
     steps:
       - checkout
