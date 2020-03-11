@@ -3,10 +3,7 @@ FROM node:12-slim
 WORKDIR /usr/src/app
 
 COPY package.json .
-ADD . /usr/src/app
-
-RUN npm install
-RUN npm run tsc
+ADD ./dist /usr/src/app/dist
 
 CMD [ "npm", "start:prod" ]
 EXPOSE 3000
