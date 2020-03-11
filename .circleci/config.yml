@@ -3,7 +3,7 @@ image: ubuntu:16.04
 jobs:
   install-dependencies:
     docker:
-      - image: node:12
+      - image: node:12-slim
     working_directory: ~/app
     steps:
       - checkout
@@ -29,14 +29,9 @@ jobs:
       - run:
           name: Build docker tag
           command: |
-            docker build -t icarodgl/adotei-back:latest .
-            docker tag icarodgl/adotei-back:latest icarodgl/adotei-back:${CIRCLE_TAG:-CIRCLE_BRANCH}
-            mkdir -p docker-images
-            docker save -o docker-images/cpcon-csv-app.tar icarodgl/adotei-back:latest
-      - persist_to_workspace:
-          root: docker-images
-          paths:
-            - cpcon-csv-app.tar
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker build -t $DOCKER_USER/adotei-back:latest .
+            docker push $DOCKER_USER/adotei-back:latest
 
 workflows:
   version: 2
