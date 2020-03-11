@@ -48,6 +48,8 @@ workflows:
               only: /^(dev|master)$/
 
       - build:
+          requires:
+            - build
           filters:
             branches:
               only: /^(dev|master)$/
