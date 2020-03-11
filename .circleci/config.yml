@@ -1,10 +1,18 @@
 version: 2.1
 
-orbs:
-  docker: circleci/node:lts
+jobs:
+  context: adotei
+  build:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
 
-workflows:
-  build-and-publish-docker-image:
-    jobs:
-      - docker/publish:
-          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+      - setup_remote_docker:
+          docker_layer_caching: true
+
+      # build and push Docker image
+      - run: |
+          docker build -t CircleCI-Public/circleci-demo-docker:$TAG .
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          docker push CircleCI-Public/circleci-demo-docker:$TAG
