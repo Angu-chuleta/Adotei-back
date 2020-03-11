@@ -23,7 +23,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:lts
+      - image: circleci/heroku@1.0.1
     machine:
       enabled: true
     working_directory: ~/app
@@ -51,6 +51,10 @@ workflows:
             tags:
             branches:
               only: /^(dev|master)$/
+
+      - deploy:
+          requires:
+            - build
     # - deploy:
     #     requires:
     #       - build
