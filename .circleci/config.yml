@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@lts
+  docker: circleci/node:lts
 
 workflows:
   build-and-publish-docker-image:
