@@ -44,27 +44,13 @@ workflows:
     jobs:
       - install-dependencies:
           filters:
-            tags:
-              only: /^([0-9]+).([0-9]+).([0-9]+)$/
             branches:
-              only: /^(develop|master)$/
-      - test:
-          requires:
-            - install-dependencies
-          filters:
-            tags:
-              only: /^([0-9]+).([0-9]+).([0-9]+)$/
-            branches:
-              only: /^(develop|master)$/
+              only: /^(dev|master)$/
+
       - build:
-          requires:
-            - lint
-            - test
           filters:
-            tags:
-              only: /^([0-9]+).([0-9]+).([0-9]+)$/
             branches:
-              only: /^(develop|master)$/
+              only: /^(dev|master)$/
     # - deploy:
     #     requires:
     #       - build
