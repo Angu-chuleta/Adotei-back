@@ -29,10 +29,10 @@ jobs:
       - run:
           name: Build docker tag
           command: |
-            docker build -t $OWNER/$CONTAINER_NAME:latest .
-            docker tag $OWNER/$CONTAINER_NAME:latest $OWNER/$CONTAINER_NAME:${CIRCLE_TAG:-CIRCLE_BRANCH}
+            docker build -t icarodgl/adotei-back:latest .
+            docker tag icarodgl/adotei-back:latest icarodgl/adotei-back:${CIRCLE_TAG:-CIRCLE_BRANCH}
             mkdir -p docker-images
-            docker save -o docker-images/cpcon-csv-app.tar $OWNER/$CONTAINER_NAME:latest
+            docker save -o docker-images/cpcon-csv-app.tar icarodgl/adotei-back:latest
       - persist_to_workspace:
           root: docker-images
           paths:
