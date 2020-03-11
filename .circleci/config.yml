@@ -10,6 +10,6 @@ jobs:
 
       # build and push Docker image
       - run: |
-          docker build -t icarodgl/$adotei-back:1.0.0 .
+          docker build -t icarodgl/adotei-back:1.0.0 .
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-          docker push icarodgl/$adotei-back:1.0.0
+          docker push icarodgl/adotei-back:1.0.0
