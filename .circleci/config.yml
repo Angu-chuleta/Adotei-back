@@ -21,13 +21,18 @@ jobs:
 
   build:
     docker:
-      - image: circleci/python
+      - image: node:12-slim
     working_directory: ~/app
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Build docker tag
+          name: build
+          command: |
+            npm run tsc
+
+      - run:
+          name: push
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker build -t $DOCKER_USER/adotei-back:latest .
