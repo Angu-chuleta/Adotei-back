@@ -49,7 +49,7 @@ workflows:
 
       - build:
           requires:
-            - build
+            - install-dependencies
           filters:
             branches:
               only: /^(dev|master)$/
