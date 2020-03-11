@@ -29,6 +29,7 @@ jobs:
       - run:
           name: build
           command: |
+            npm i
             npm run tsc
 
       - run:
