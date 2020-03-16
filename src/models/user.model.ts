@@ -1,15 +1,15 @@
 import { Schema, model, Document } from 'mongoose';
 
-export interface IPetModel extends Document {
+export interface IUserModel extends Document {
   name: string;
   foto: string;
-  porte: string;
+  email: string;
+  telefone: string;
   sobre: string;
-  idade: number;
-  foiAdotado: boolean;
+  credito: number;
 }
 
-export const PetSchema = new Schema<IPetModel>({
+const UserSchema = new Schema<IUserModel>({
   name: {
     type: String,
     required: true,
@@ -18,22 +18,22 @@ export const PetSchema = new Schema<IPetModel>({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  telefone: {
+    type: String,
+    required: true,
+  },
   sobre: {
     type: String,
     required: true,
   },
-  porte: {
-    type: String,
-    required: true,
-  },
-  idade: {
-    type: Number,
-    required: true,
-  },
-  foiAdotado: {
+  credito: {
     type: Number,
     required: true,
   },
 });
 
-export default model<IPetModel>('Pet', PetSchema);
+export default model<IUserModel>('User', UserSchema);
