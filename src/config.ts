@@ -11,7 +11,7 @@ const {
 } = process.env;
 
 const isTesting = NODE_ENV === 'test';
-const dbName = isTesting ? 'test' : 'devradar';
+const dbName = isTesting ? 'test' : 'adoteitest';
 
 const connectDb = () => {
   mongoose.connect(
