@@ -14,7 +14,7 @@ export abstract class BaseService<A extends IBaseModel> {
       }
       throw { message: 'Objeto não encontrado' };
     } catch (error) {
-      throw { message: 'Objeto não encontrado' };
+      throw { message: error };
     }
   }
   async create(model: Object) {
@@ -22,7 +22,7 @@ export abstract class BaseService<A extends IBaseModel> {
       const res = await this.BaseModel.create(model);
       return res;
     } catch (error) {
-      throw { message: 'Erro ao criar Objeto' };
+      throw { message: error };
     }
   }
   async delete(id: string) {
@@ -32,8 +32,8 @@ export abstract class BaseService<A extends IBaseModel> {
         return reg;
       }
       throw { message: 'Objeto não encontrado' };
-    } catch (e) {
-      throw { message: 'Objeto não encontrado' };
+    } catch (error) {
+      throw { message: error };
     }
   }
   async update(id: string, model: Object) {
@@ -45,7 +45,7 @@ export abstract class BaseService<A extends IBaseModel> {
       }
       throw { message: 'Objeto não encontrado' };
     } catch (error) {
-      throw { message: 'Objeto não encontrado' };
+      throw { message: error };
     }
   }
 }
