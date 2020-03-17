@@ -1,7 +1,5 @@
 import request from 'supertest';
 import { app } from '../src/main';
-import { json } from 'body-parser';
-import { log } from 'util';
 
 describe('GET /transaction', () => {});
 
