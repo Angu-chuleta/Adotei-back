@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="/workspace/Adotei-back/__tests__/institution.spec.ts">
-    <testCase name="CRUD instituition create instituition" duration="3227"/>
-    <testCase name="CRUD instituition get the instituition" duration="243"/>
-    <testCase name="CRUD instituition update instituition" duration="393"/>
-    <testCase name="CRUD instituition delete instituition" duration="395"/>
+  <file path="/workspace/Adotei-back/__tests__/transaction.spec.ts">
+    <testCase name="CRUD transaction create transaction" duration="3038"/>
+    <testCase name="CRUD transaction get the transaction" duration="194"/>
+    <testCase name="CRUD transaction update transaction" duration="364"/>
+    <testCase name="CRUD transaction delete transaction" duration="363"/>
   </file>
   <file path="/workspace/Adotei-back/__tests__/pet.spec.ts">
-    <testCase name="CRUD pet create pet" duration="2915"/>
-    <testCase name="CRUD pet get the pet" duration="202"/>
-    <testCase name="CRUD pet update pet" duration="371"/>
-    <testCase name="CRUD pet delete pet" duration="376"/>
+    <testCase name="CRUD pet create pet" duration="3043"/>
+    <testCase name="CRUD pet get the pet" duration="196"/>
+    <testCase name="CRUD pet update pet" duration="358"/>
+    <testCase name="CRUD pet delete pet" duration="353"/>
   </file>
   <file path="/workspace/Adotei-back/__tests__/user.spec.ts">
-    <testCase name="CRUD user create user" duration="2923"/>
-    <testCase name="CRUD user get the user" duration="202"/>
-    <testCase name="CRUD user update user" duration="393"/>
-    <testCase name="CRUD user delete user" duration="372"/>
+    <testCase name="CRUD user create user" duration="2955"/>
+    <testCase name="CRUD user get the user" duration="198"/>
+    <testCase name="CRUD user update user" duration="360"/>
+    <testCase name="CRUD user delete user" duration="352"/>
   </file>
-  <file path="/workspace/Adotei-back/__tests__/transaction.spec.ts">
-    <testCase name="CRUD transaction create transaction" duration="2901"/>
-    <testCase name="CRUD transaction get the transaction" duration="213"/>
-    <testCase name="CRUD transaction update transaction" duration="373"/>
-    <testCase name="CRUD transaction delete transaction" duration="366"/>
+  <file path="/workspace/Adotei-back/__tests__/institution.spec.ts">
+    <testCase name="CRUD instituition create instituition" duration="2970"/>
+    <testCase name="CRUD instituition get the instituition" duration="203"/>
+    <testCase name="CRUD instituition update instituition" duration="367"/>
+    <testCase name="CRUD instituition delete instituition" duration="353"/>
   </file>
 </testExecutions>

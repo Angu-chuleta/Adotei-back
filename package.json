@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node-dev src/index.ts",
     "test": "NODE_ENV=test jest --coverage --detectOpenHandles --forceExit",
+    "test:cov": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build": "rm -rf dist && tsc",
     "start:prod": "node ./dist/src/index.js"
   },
@@ -29,6 +30,7 @@
     "@types/jest": "^25.1.4",
     "@types/mongoose": "^5.7.4",
     "@types/supertest": "^2.0.8",
+    "coveralls": "^3.0.9",
     "jest": "^25.1.0",
     "jest-sonar-reporter": "^2.0.0",
     "sonarqube-scanner": "^2.5.0",

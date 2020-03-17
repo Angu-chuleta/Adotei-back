@@ -1,7 +1,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Angu-chuleta_Adotei-back&metric=alert_status)](https://sonarcloud.io/dashboard?id=Angu-chuleta_Adotei-back)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Angu-chuleta_Adotei-back&metric=code_smells)](https://sonarcloud.io/dashboard?id=Angu-chuleta_Adotei-back)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Angu-chuleta_Adotei-back&metric=coverage)](https://sonarcloud.io/dashboard?id=Angu-chuleta_Adotei-back)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Angu-chuleta_Adotei-back&metric=security_rating)](https://sonarcloud.io/dashboard?id=Angu-chuleta_Adotei-back)
+[![Coverage Status](https://coveralls.io/repos/github/Angu-chuleta/Adotei-back/badge.svg?branch=dev)](https://coveralls.io/github/Angu-chuleta/Adotei-back?branch=dev)
 
 # Adotei back
 
