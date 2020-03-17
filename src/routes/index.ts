@@ -32,9 +32,9 @@ routes.post('/user', userController.create);
 
 // transaction Routes
 routes.get('/transaction', transactionController.getAll);
-routes.get('/usertransaction', transactionController.getOne);
-routes.put('/usertransaction', transactionController.update);
-routes.delete('/usertransaction', transactionController.delete);
+routes.get('/transaction/:id', transactionController.getOne);
+routes.put('/transaction/:id', transactionController.update);
+routes.delete('/transaction/:id', transactionController.delete);
 routes.post('/transaction', transactionController.create);
 
 // ping route

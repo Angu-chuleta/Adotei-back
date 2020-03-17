@@ -2,7 +2,7 @@ import { Schema, model, Document } from 'mongoose';
 
 export interface ITransactionModel extends Document {
   pet_id: string;
-  value: string;
+  value: number;
   date: string;
 }
 
@@ -21,4 +21,4 @@ export const TransactionSchema = new Schema<ITransactionModel>({
   },
 });
 
-export default model<ITransactionModel>('Transaction', TransactionSchema);
+export default model<ITransactionModel>('transaction', TransactionSchema);
