@@ -3,11 +3,11 @@ import {
   userController,
   petController,
   instituitionController,
+  transactionController,
+  pingController,
 } from '../controllers';
 
 const routes = Router();
-
-routes.get('/users', userController.getAll);
 
 // Pet routes
 routes.get('/pet', petController.getAll);
@@ -29,5 +29,17 @@ routes.get('/user/:id', userController.getOne);
 routes.put('/user/:id', userController.update);
 routes.delete('/user/:id', userController.delete);
 routes.post('/user', userController.create);
+
+// transaction Routes
+routes.get('/transaction', transactionController.getAll);
+routes.get('/usertransaction', transactionController.getOne);
+routes.put('/usertransaction', transactionController.update);
+routes.delete('/usertransaction', transactionController.delete);
+routes.post('/transaction', transactionController.create);
+
+// ping route
+routes.get('/', pingController.ping);
+// error route
+routes.get('/*', pingController.error);
 
 export default routes;
