@@ -1,6 +1,18 @@
 version: 2
 image: ubuntu:16.04
 jobs:
+  tests:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+          name: test jest
+          command: |
+            npm i
+            npm run test
+
   build:
     docker:
       - image: circleci/node:lts
@@ -12,7 +24,7 @@ jobs:
           name: build
           command: |
             npm i
-            npm run tsc
+            npm run build
 
       - run:
           name: push
@@ -47,6 +59,8 @@ workflows:
   lint-test-and-build:
     jobs:
       - build:
+          requires:
+            - tests
           filters:
             tags:
             branches:
@@ -55,6 +69,7 @@ workflows:
       - deploy:
           requires:
             - build
+      - tests:
     # - deploy:
     #     requires:
     #       - build
