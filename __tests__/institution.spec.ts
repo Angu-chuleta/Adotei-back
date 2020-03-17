@@ -38,7 +38,6 @@ describe('CRUD instituition', () => {
     const res = await request(app)
       .put(`/instituition/${instituition_id}`)
       .send({ ...instituition, credito: 100 });
-    console.log(res.body);
 
     expect(res.status).toBe(200);
     //expect(res.body.credito).toBe(100);

@@ -33,7 +33,6 @@ describe('CRUD transaction', () => {
     const res = await request(app)
       .put(`/transaction/${transaction_id}`)
       .send({ ...transaction, value: 50 });
-    console.log(res.body);
     //expect(res.body.value).toBe(50);
     expect(res.status).toBe(200);
   });

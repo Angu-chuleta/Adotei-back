@@ -83,8 +83,7 @@ module.exports = {
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 
-
-  modulePathIgnorePatterns: ["<rootDir>/dist/"],
+  modulePathIgnorePatterns: ['<rootDir>/dist/'],
 
   // Activates notifications for test results
   // notify: false,
@@ -154,7 +153,7 @@ module.exports = {
   // testRegex: [],
 
   // This option allows the use of a custom results processor
-  // testResultsProcessor: undefined,
+  testResultsProcessor: 'jest-sonar-reporter',
 
   // This option allows use of a custom test runner
   // testRunner: "jasmine2",
@@ -166,7 +165,9 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {
+    '^.+\\.ts$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
