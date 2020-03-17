@@ -70,6 +70,9 @@ workflows:
           requires:
             - build
       - tests:
+          filters:
+            branches:
+              only: /^(dev|master)$/
     # - deploy:
     #     requires:
     #       - build
