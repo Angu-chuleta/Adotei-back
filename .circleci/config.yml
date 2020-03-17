@@ -1,83 +1,24 @@
-version: 2
-image: ubuntu:16.04
+version: 2.1
 jobs:
-  tests:
-    docker:
-      - image: circleci/node:lts
-    working_directory: ~/app
-    steps:
-      - checkout
-      - run:
-          name: test jest
-          command: |
-            npm i
-            npm run test
-
   build:
-    docker:
-      - image: circleci/node:lts
     working_directory: ~/app
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: build
-          command: |
-            npm i
-            npm run build
-
-      - run:
-          name: push
-          command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker build -t $DOCKER_USER/adotei-back:latest .
-            docker push $DOCKER_USER/adotei-back:latest
-
-  deploy:
     docker:
-      - image: circleci/heroku@1.0.1
-    machine:
-      enabled: true
-    working_directory: ~/app
-    environment:
-      HEROKU_APP: $HEROKU_APP
+      - image: circleci/node:10.16.3
+      - image: mongo:4.2.0
     steps:
       - checkout
       - run:
-          name: Setup Heroku
-          command: bash .circleci/setup-heroku.sh # run a script to set up Heroku
-
+          name: update-npm
+          command: "sudo npm install -g npm@5"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          command: |
-            git push heroku sequential-branch-filter:master
-            heroku run rake db:migrate
-            sleep 5 # sleep for 5 seconds to wait for dynos
-            heroku restart
-
-workflows:
-  version: 2
-  lint-test-and-build:
-    jobs:
-      - build:
-          requires:
-            - tests
-          filters:
-            tags:
-            branches:
-              only: /^(dev|master)$/
-
-      - deploy:
-          requires:
-            - build
-      - tests:
-          filters:
-            branches:
-              only: /^(dev|master)$/
-    # - deploy:
-    #     requires:
-    #       - build
-    #     filters:
-    #       tags:
-    #         only: /^([0-9]+).([0-9]+).([0-9]+)$/
-    #       branches:
-    #         ignore: /.*/
+          name: install dependency
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: npm test
