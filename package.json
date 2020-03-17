@@ -6,8 +6,8 @@
   "scripts": {
     "start": "ts-node-dev src/index.ts",
     "test": "jest --detectOpenHandles --forceExit",
-    "build": "tsc",
-    "start:prod": "node ./dist/index.js"
+    "build": "rm -rf dist && tsc",
+    "start:prod": "node ./dist/src/index.js"
   },
   "repository": {
     "type": "git",
