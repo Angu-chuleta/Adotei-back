@@ -31,7 +31,7 @@ export const PetSchema = new Schema<IPetModel>({
     required: true,
   },
   foiAdotado: {
-    type: Number,
+    type: Boolean,
     required: true,
   },
 });

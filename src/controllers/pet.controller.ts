@@ -5,7 +5,12 @@ import { IPetModel } from '../models';
 
 class PetController extends BaseController<IPetModel, PetService> {
   constructor() {
-    super(petService);
+    super(petService, {
+      // keys do req.body que serão usados no create
+      create: ['name', 'foto', 'porte', 'sobre', 'idade', 'foiAdotado'],
+      // keys do req.body que serão usados no update
+      update: ['name', 'foto', 'porte', 'sobre', 'idade', 'foiAdotado']
+    });
   }
 }
 

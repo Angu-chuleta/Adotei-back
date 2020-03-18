@@ -1,7 +1,7 @@
 import { IBaseModel } from '../models';
 import { Model } from 'mongoose';
 export abstract class BaseService<A extends IBaseModel> {
-  constructor(protected BaseModel: Model<A>) {}
+  constructor(protected BaseModel: Model<A>) { }
   async getAll() {
     const res = await this.BaseModel.find();
     return res;
@@ -40,6 +40,7 @@ export abstract class BaseService<A extends IBaseModel> {
     try {
       const reg = await this.BaseModel.findById(id);
       if (reg) {
+        Object.assign(reg, model) // pega os dados de "model" e joga para "reg"
         const res = await reg.save();
         return res;
       }

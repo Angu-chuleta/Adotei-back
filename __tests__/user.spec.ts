@@ -1,7 +1,7 @@
 import request from 'supertest';
 import { app } from '../src/main';
 
-describe('GET /user', () => {});
+describe('GET /user', () => { });
 
 describe('CRUD user', () => {
   const user = {
@@ -20,7 +20,7 @@ describe('CRUD user', () => {
       .set('Accept', 'application/json')
       .send(user);
     expect(res.status).toBe(201);
-    expect(res.body.name).toBe(user.name);
+    expect(res.body).toMatchObject(user);
 
     user_id = res.body._id;
   });
@@ -40,7 +40,7 @@ describe('CRUD user', () => {
   });
   it('delete user', async () => {
     const res = await request(app)
-      .put(`/user/${user_id}`)
+      .delete(`/user/${user_id}`)
       .set('Accept', 'application/json');
     expect(res.status).toBe(200);
   });

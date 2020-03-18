@@ -1,13 +1,13 @@
 import request from 'supertest';
 import { app } from '../src/main';
 
-describe('GET /transaction', () => {});
+describe('GET /transaction', () => { });
 
 describe('CRUD transaction', () => {
   const transaction = {
     pet_id: '1123123',
     value: 100,
-    date: '01-01-2020',
+    date: new Date('2020-01-01').toISOString(),
   };
 
   let transaction_id = '';
@@ -17,7 +17,7 @@ describe('CRUD transaction', () => {
       .set('Accept', 'application/json')
       .send(transaction);
     expect(res.status).toBe(201);
-    expect(res.body.value).toBe(transaction.value);
+    expect(res.body).toMatchObject(transaction);
 
     transaction_id = res.body._id;
   });
@@ -38,7 +38,7 @@ describe('CRUD transaction', () => {
   });
   it('delete transaction', async () => {
     const res = await request(app)
-      .put(`/transaction/${transaction_id}`)
+      .delete(`/transaction/${transaction_id}`)
       .set('Accept', 'application/json');
     expect(res.status).toBe(200);
   });
