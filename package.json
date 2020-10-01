@@ -33,7 +33,7 @@
     "coveralls": "^3.0.9",
     "jest": "^25.1.0",
     "jest-sonar-reporter": "^2.0.0",
-    "sonarqube-scanner": "^2.5.0",
+    "sonarqube-scanner": "^2.7.0",
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
     "ts-node-dev": "^1.0.0-pre.44",
