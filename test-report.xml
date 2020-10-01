@@ -1,27 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="/home/david/github/davidpvilaca/Adotei-back/__tests__/pet.spec.ts">
-    <testCase name="CRUD pet create pet" duration="538"/>
-    <testCase name="CRUD pet get the pet" duration="52"/>
-    <testCase name="CRUD pet update pet" duration="96"/>
-    <testCase name="CRUD pet delete pet" duration="59"/>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts">
+    <testCase name="CRUD instituition create instituition" duration="5007">
+      <failure message=": Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: "><![CDATA[: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: 
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/setup_jest_globals.js:78:9)
+    at specFactory (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:523:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:592:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:128:23)
+    at it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:100:21)
+    at Suite.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:19:3)
+    at addSpecsToSuite (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:444:51)
+    at Env.describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:414:11)
+    at describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:88:18)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:6:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)]]></failure>
+    </testCase>
+    <testCase name="CRUD instituition get the instituition" duration="5009">
+      <failure message=": Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: "><![CDATA[: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: 
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/setup_jest_globals.js:78:9)
+    at specFactory (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:523:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:592:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:86:25)
+    at it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:100:21)
+    at Suite.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:30:3)
+    at addSpecsToSuite (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:444:51)
+    at Env.describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:414:11)
+    at describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:88:18)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:6:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)]]></failure>
+    </testCase>
+    <testCase name="CRUD instituition update instituition" duration="23">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:42:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
+    <testCase name="CRUD instituition delete instituition" duration="9">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:49:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
   </file>
-  <file path="/home/david/github/davidpvilaca/Adotei-back/__tests__/user.spec.ts">
-    <testCase name="CRUD user create user" duration="491"/>
-    <testCase name="CRUD user get the user" duration="49"/>
-    <testCase name="CRUD user update user" duration="86"/>
-    <testCase name="CRUD user delete user" duration="51"/>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts">
+    <testCase name="CRUD pet create pet" duration="5011">
+      <failure message=": Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: "><![CDATA[: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: 
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/setup_jest_globals.js:78:9)
+    at specFactory (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:523:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:592:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:128:23)
+    at it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:100:21)
+    at Suite.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:17:3)
+    at addSpecsToSuite (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:444:51)
+    at Env.describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:414:11)
+    at describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:88:18)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:6:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)]]></failure>
+    </testCase>
+    <testCase name="CRUD pet get the pet" duration="5008">
+      <failure message=": Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: "><![CDATA[: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: 
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/setup_jest_globals.js:78:9)
+    at specFactory (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:523:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:592:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:86:25)
+    at it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:100:21)
+    at Suite.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:28:3)
+    at addSpecsToSuite (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:444:51)
+    at Env.describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:414:11)
+    at describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:88:18)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:6:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)]]></failure>
+    </testCase>
+    <testCase name="CRUD pet update pet" duration="30">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:39:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
+    <testCase name="CRUD pet delete pet" duration="28">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:45:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
   </file>
-  <file path="/home/david/github/davidpvilaca/Adotei-back/__tests__/institution.spec.ts">
-    <testCase name="CRUD instituition create instituition" duration="477"/>
-    <testCase name="CRUD instituition get the instituition" duration="55"/>
-    <testCase name="CRUD instituition update instituition" duration="86"/>
-    <testCase name="CRUD instituition delete instituition" duration="54"/>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts">
+    <testCase name="CRUD transaction create transaction" duration="5006">
+      <failure message=": Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: "><![CDATA[: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: 
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/setup_jest_globals.js:78:9)
+    at specFactory (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:523:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:592:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:128:23)
+    at it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:100:21)
+    at Suite.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:14:3)
+    at addSpecsToSuite (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:444:51)
+    at Env.describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:414:11)
+    at describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:88:18)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:6:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)]]></failure>
+    </testCase>
+    <testCase name="CRUD transaction get the transaction" duration="4102">
+      <failure message="MongooseServerSelectionError: Authentication failed."><![CDATA[MongooseServerSelectionError: Authentication failed.
+    at new MongooseServerSelectionError (/home/icaro/Documentos/Adotei-back/node_modules/mongoose/lib/error/serverSelection.js:22:11)
+    at NativeConnection.Connection.openUri (/home/icaro/Documentos/Adotei-back/node_modules/mongoose/lib/connection.js:808:32)
+    at Mongoose.connect (/home/icaro/Documentos/Adotei-back/node_modules/mongoose/lib/index.js:333:15)
+    at Object.connectDb (/home/icaro/Documentos/Adotei-back/src/config.ts:569:22)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/src/main.ts:409:10)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at Runtime.requireModuleOrMock (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:826:21)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts:2:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
+    <testCase name="CRUD transaction update transaction" duration="16">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:37:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
+    <testCase name="CRUD transaction delete transaction" duration="12">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:43:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
   </file>
-  <file path="/home/david/github/davidpvilaca/Adotei-back/__tests__/transaction.spec.ts">
-    <testCase name="CRUD transaction create transaction" duration="449"/>
-    <testCase name="CRUD transaction get the transaction" duration="43"/>
-    <testCase name="CRUD transaction update transaction" duration="75"/>
-    <testCase name="CRUD transaction delete transaction" duration="46"/>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts">
+    <testCase name="CRUD user create user" duration="5005">
+      <failure message=": Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: "><![CDATA[: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: 
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+    at new Spec (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/setup_jest_globals.js:78:9)
+    at specFactory (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:523:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:592:24)
+    at Env.it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:128:23)
+    at it (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:100:21)
+    at Suite.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:17:3)
+    at addSpecsToSuite (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:444:51)
+    at Env.describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/Env.js:414:11)
+    at describe (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/jasmine/jasmineLight.js:88:18)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:6:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)]]></failure>
+    </testCase>
+    <testCase name="CRUD user get the user" duration="4926">
+      <failure message="MongooseServerSelectionError: Authentication failed."><![CDATA[MongooseServerSelectionError: Authentication failed.
+    at new MongooseServerSelectionError (/home/icaro/Documentos/Adotei-back/node_modules/mongoose/lib/error/serverSelection.js:22:11)
+    at NativeConnection.Connection.openUri (/home/icaro/Documentos/Adotei-back/node_modules/mongoose/lib/connection.js:808:32)
+    at Mongoose.connect (/home/icaro/Documentos/Adotei-back/node_modules/mongoose/lib/index.js:333:15)
+    at Object.connectDb (/home/icaro/Documentos/Adotei-back/src/config.ts:569:22)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/src/main.ts:409:10)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at Runtime.requireModuleOrMock (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:826:21)
+    at Object.<anonymous> (/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts:2:1)
+    at Runtime._execModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:1205:24)
+    at Runtime._loadModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:805:12)
+    at Runtime.requireModule (/home/icaro/Documentos/Adotei-back/node_modules/jest-runtime/build/index.js:662:10)
+    at jasmine2 (/home/icaro/Documentos/Adotei-back/node_modules/jest-jasmine2/build/index.js:228:13)
+    at runTestInternal (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:385:22)
+    at runTest (/home/icaro/Documentos/Adotei-back/node_modules/jest-runner/build/runTest.js:465:34)]]></failure>
+    </testCase>
+    <testCase name="CRUD user update user" duration="14">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:39:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
+    <testCase name="CRUD user delete user" duration="8">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at /home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:45:24
+    at step (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:44:23)
+    at Object.next (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:25:53)
+    at fulfilled (/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts:16:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)]]></failure>
+    </testCase>
   </file>
 </testExecutions>
