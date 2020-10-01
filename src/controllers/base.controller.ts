@@ -3,15 +3,15 @@ import { BaseService } from 'services/base.service';
 import { IBaseModel } from '../models';
 
 export interface IControllerModelKeys<T> {
-  create: Array<keyof T>
-  update: Array<keyof T>
+  create: Array<keyof T>;
+  update: Array<keyof T>;
 }
 
 export abstract class BaseController<
   A extends IBaseModel,
   S extends BaseService<A>
-  > {
-  constructor(protected service: S, protected keys: IControllerModelKeys<A>) { }
+> {
+  constructor(protected service: S, protected keys: IControllerModelKeys<A>) {}
 
   getAll = async (req: Request, res: Response) => {
     try {
@@ -24,7 +24,10 @@ export abstract class BaseController<
 
   create = async (req: Request, res: Response) => {
     try {
-      const model = this.keys.create.reduce((obj, key) => ({ ...obj, ...{ [key]: req.body[key] } }), {} as A);
+      const model = this.keys.create.reduce(
+        (obj, key) => ({ ...obj, ...{ [key]: req.body[key] } }),
+        {} as A,
+      );
       const reg = await this.service.create(model);
       res.status(201).json(reg);
     } catch (error) {
@@ -34,7 +37,10 @@ export abstract class BaseController<
   update = async (req: Request, res: Response) => {
     try {
       const id = req.params.id;
-      const model = this.keys.update.reduce((obj, key) => ({ ...obj, ...{ [key]: req.body[key] } }), {} as A);
+      const model = this.keys.update.reduce(
+        (obj, key) => ({ ...obj, ...{ [key]: req.body[key] } }),
+        {} as A,
+      );
       const reg = await this.service.update(id, model);
       res.json(reg);
     } catch (error) {
