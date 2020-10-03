@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  authController,
   userController,
   petController,
   instituitionController,
@@ -9,7 +10,6 @@ import {
 
 const routes = Router();
 
-// Pet routes
 routes.get('/pet', petController.getAll);
 routes.get('/pet/:id', petController.getOne);
 routes.put('/pet/:id', petController.update);
@@ -36,6 +36,13 @@ routes.get('/transaction/:id', transactionController.getOne);
 routes.put('/transaction/:id', transactionController.update);
 routes.delete('/transaction/:id', transactionController.delete);
 routes.post('/transaction', transactionController.create);
+
+// auth Routes
+routes.get('/auth', authController.getAll);
+routes.get('/auth/:id', authController.getOne);
+routes.put('/auth/:id', authController.update);
+routes.delete('/auth/:id', authController.delete);
+routes.post('/auth', authController.create);
 
 // ping route
 routes.get('/', pingController.ping);
