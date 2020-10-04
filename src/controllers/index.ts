@@ -1,6 +1,6 @@
 import { userController } from './user.controller';
 import { petController } from './pet.controller';
-import { instituitionController } from './institution.controller';
+import { institutionController } from './institution.controller';
 import { transactionController } from './transaction.controller';
 import { PingController } from './ping.controller';
 import { authController } from './auth.controller';
@@ -9,7 +9,7 @@ export {
   authController,
   userController,
   petController,
-  instituitionController,
+  institutionController,
   transactionController,
   pingController,
 };

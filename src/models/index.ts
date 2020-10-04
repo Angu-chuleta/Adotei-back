@@ -1,5 +1,5 @@
 import PetModel, { IPetModel } from './pet.model';
-import InstituitionModel, { IInstituitionModel } from './instituition.model';
+import InstitutionModel, { IInstitutionModel } from './instituition.model';
 import UserModel, { IUserModel } from './user.model';
 import TransactionModel, { ITransactionModel } from './transaction.model';
 import AuthModel, { IAuthModel } from './auth.model';
@@ -9,11 +9,11 @@ export {
   AuthModel,
   IAuthModel,
   PetModel,
-  InstituitionModel,
+  InstitutionModel,
   UserModel,
   IBaseModel,
   IPetModel,
-  IInstituitionModel,
+  IInstitutionModel,
   IUserModel,
   TransactionModel,
   ITransactionModel,

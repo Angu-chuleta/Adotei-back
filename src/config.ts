@@ -25,5 +25,7 @@ const connectDb = () => {
 };
 
 const PORT = isTesting ? parseInt(`${Math.random() * 10}999`, 10) : _PORT;
-
-export { connectDb, PORT, NODE_ENV };
+const authConfig = {
+  jwtSecret: dbPass || 'default',
+};
+export { connectDb, PORT, NODE_ENV, authConfig };
