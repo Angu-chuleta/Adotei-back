@@ -24,7 +24,7 @@ const options: SwaggerDefinition = {
 
 connectDb();
 
-fs.writeFileSync('./swagger.json', JSON.stringify(swaggerJSDoc(options)));
+// fs.writeFileSync('./swagger.json', JSON.stringify(swaggerJSDoc(options)));
 const swag = require('../swagger.json');
 app.use('/docs', serve, setup(swag));
 app.use(bodyParser.json());
