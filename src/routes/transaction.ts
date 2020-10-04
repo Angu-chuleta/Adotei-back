@@ -1,7 +1,9 @@
+import { checkRole } from '../middlewares/checkRole';
 import { Router } from 'express';
+import { checkJwt } from '../middlewares/auth.middleware';
 import { transactionController } from '../controllers';
 const routes = Router();
-
+const admin = 2;
 /**
  * @swagger
  *
@@ -14,7 +16,7 @@ const routes = Router();
  *       200:
  *         description: transaction sucess
  */
-routes.get('/transaction', transactionController.getAll);
+routes.get('/transaction', [checkJwt], transactionController.getAll);
 /**
  * @swagger
  *
@@ -27,7 +29,7 @@ routes.get('/transaction', transactionController.getAll);
  *       200:
  *         description: transaction sucess
  */
-routes.get('/transaction/:id', transactionController.getOne);
+routes.get('/transaction/:id', [checkJwt], transactionController.getOne);
 /**
  * @swagger
  *
@@ -40,7 +42,7 @@ routes.get('/transaction/:id', transactionController.getOne);
  *       200:
  *         description: transaction sucess
  */
-routes.put('/transaction/:id', transactionController.update);
+routes.put('/transaction/:id', [checkJwt], transactionController.update);
 /**
  * @swagger
  *
@@ -53,7 +55,11 @@ routes.put('/transaction/:id', transactionController.update);
  *       200:
  *         description: transaction sucess
  */
-routes.delete('/transaction/:id', transactionController.delete);
+routes.delete(
+  '/transaction/:id',
+  [checkJwt, checkRole(admin)],
+  transactionController.delete,
+);
 /**
  * @swagger
  *

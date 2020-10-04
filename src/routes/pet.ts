@@ -1,8 +1,10 @@
+import { checkRole } from '../middlewares/checkRole';
 import { Router } from 'express';
+import { checkJwt } from '../middlewares/auth.middleware';
 import { petController } from '../controllers';
 
 const routes = Router();
-
+const admin = 2;
 /**
  * @swagger
  *
@@ -28,7 +30,7 @@ routes.get('/pet', petController.getAll);
  *       200:
  *         description: pet
  */
-routes.get('/pet/:id', petController.getOne);
+routes.get('/pet/:id', [checkJwt], petController.getOne);
 /**
  * @swagger
  *
@@ -41,7 +43,7 @@ routes.get('/pet/:id', petController.getOne);
  *       200:
  *         description: pet
  */
-routes.put('/pet/:id', petController.update);
+routes.put('/pet/:id', [checkJwt, checkRole(admin)], petController.update);
 /**
  * @swagger
  *
@@ -54,7 +56,7 @@ routes.put('/pet/:id', petController.update);
  *       200:
  *         description: pet
  */
-routes.delete('/pet/:id', petController.delete);
+routes.delete('/pet/:id', [checkJwt, checkRole(admin)], petController.delete);
 /**
  * @swagger
  *
@@ -67,6 +69,6 @@ routes.delete('/pet/:id', petController.delete);
  *       200:
  *         description: pet
  */
-routes.post('/pet', petController.create);
+routes.post('/pet', [checkJwt, checkRole(admin)], petController.create);
 
 export default routes;

@@ -12,6 +12,8 @@ export interface IInstitutionModel extends Document {
   valido: boolean;
   termo: string;
   pets: Array<IPetModel>;
+  uf: string;
+  cidade: string;
 }
 
 const InstitutionSchema = new Schema<IInstitutionModel>({
@@ -50,6 +52,14 @@ const InstitutionSchema = new Schema<IInstitutionModel>({
   pets: {
     type: [PetSchema],
     default: [],
+  },
+  uf: {
+    type: String,
+    required: true,
+  },
+  cidade: {
+    type: String,
+    required: true,
   },
 });
 

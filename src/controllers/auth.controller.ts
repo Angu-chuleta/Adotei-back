@@ -7,32 +7,37 @@ class AuthController extends BaseController<IAuthModel, AuthService> {
   constructor() {
     super(authService, {
       // keys do req.body que serão usados no create
-      create: ['username', 'password'],
+      create: ['username', 'password', 'role'],
       // keys do req.body que serão usados no update
-      update: ['username', 'password'],
+      update: ['username', 'password', 'role'],
     });
   }
   login = async (req: Request, res: Response) => {
     try {
-      let { username, password } = req.body;
+      const { username, password } = req.body;
 
-      let token = authService.login(username, password);
+      let token = await authService.login(username, password);
       res.send(token);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(400).send(error);
     }
   };
   changePassword = async () => {};
 
   newUser = async (req: Request, res: Response) => {
     //Get parameters from the body
-    const username = req.params.username;
-    const password = req.params.password;
-    if (username !== null && password !== null) {
-      let user = authService.newUser(username, password);
-      res.send(user);
+    try {
+      const { username, password, role } = req.body;
+
+      if (username !== null && password !== null && role > 0) {
+        let user = await authService.newUser(username, password, role);
+        res.send(user);
+      } else {
+        res.status(400).send({ message: 'Objeto inválido' });
+      }
+    } catch (error) {
+      res.status(400).send(error);
     }
-    res.send(400);
   };
 }
 export const authController = new AuthController();

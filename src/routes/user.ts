@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { checkJwt } from '../middlewares/auth.middleware';
 import { userController } from '../controllers';
 const routes = Router();
 
@@ -25,7 +26,7 @@ const routes = Router();
  *       200:
  *         description: login
  */
-routes.get('/user', userController.getAll);
+routes.get('/user', [checkJwt], userController.getAll);
 /**
  * @swagger
  *
@@ -38,7 +39,7 @@ routes.get('/user', userController.getAll);
  *       200:
  *         description: user
  */
-routes.get('/user/:id', userController.getOne);
+routes.get('/user/:id', [checkJwt], userController.getOne);
 /**
  * @swagger
  *
@@ -51,7 +52,7 @@ routes.get('/user/:id', userController.getOne);
  *       200:
  *         description: user
  */
-routes.put('/user/:id', userController.update);
+routes.put('/user/:id', [checkJwt], userController.update);
 /**
  * @swagger
  *
@@ -64,7 +65,7 @@ routes.put('/user/:id', userController.update);
  *       200:
  *         description: user
  */
-routes.delete('/user/:id', userController.delete);
+routes.delete('/user/:id', [checkJwt], userController.delete);
 /**
  * @swagger
  *
