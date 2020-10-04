@@ -8,6 +8,7 @@ const {
   MONGODB_PASS: dbPass,
   PORT: _PORT,
   NODE_ENV,
+  JWT,
 } = process.env;
 
 const isTesting = NODE_ENV === 'test';
@@ -26,6 +27,6 @@ const connectDb = () => {
 
 const PORT = isTesting ? parseInt(`${Math.random() * 10}999`, 10) : _PORT;
 const authConfig = {
-  jwtSecret: dbPass || 'default',
+  jwtSecret: JWT || 's3cr370',
 };
 export { connectDb, PORT, NODE_ENV, authConfig };
