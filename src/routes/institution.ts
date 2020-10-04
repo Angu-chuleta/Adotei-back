@@ -1,7 +1,10 @@
 import { Router } from 'express';
+import { checkJwt } from '../middlewares/auth.middleware';
+import { checkRole } from '../middlewares/checkRole';
 import { institutionController } from '../controllers';
 const routes = Router();
 
+const adminRole = 2;
 // institution routes
 
 /**
@@ -16,7 +19,7 @@ const routes = Router();
  *       200:
  *         description: get all institutions
  */
-routes.get('/institution', institutionController.getAll);
+routes.get('/institution', [checkJwt], institutionController.getAll);
 /**
  * @swagger
  *
@@ -29,7 +32,7 @@ routes.get('/institution', institutionController.getAll);
  *       200:
  *         description: get one institution by id
  */
-routes.get('/institution/:id', institutionController.getOne);
+routes.get('/institution/:id', [checkJwt], institutionController.getOne);
 /**
  * @swagger
  *
@@ -42,7 +45,11 @@ routes.get('/institution/:id', institutionController.getOne);
  *       200:
  *         description: institution sucess
  */
-routes.put('/institution/:id', institutionController.update);
+routes.put(
+  '/institution/:id',
+  [checkJwt, checkRole(adminRole)],
+  institutionController.update,
+);
 /**
  * @swagger
  *
@@ -55,7 +62,11 @@ routes.put('/institution/:id', institutionController.update);
  *       200:
  *         description: ping
  */
-routes.delete('/institution/:id', institutionController.delete);
+routes.delete(
+  '/institution/:id',
+  [checkJwt, checkRole(adminRole)],
+  institutionController.delete,
+);
 /**
  * @swagger
  *
@@ -68,6 +79,10 @@ routes.delete('/institution/:id', institutionController.delete);
  *       200:
  *         description: institution
  */
-routes.post('/institution', institutionController.create);
+routes.post(
+  '/institution',
+  [checkJwt, checkRole(adminRole)],
+  institutionController.create,
+);
 
 export default routes;

@@ -19,10 +19,9 @@ class InstitutionController extends BaseController<
         'valido',
         'termo',
         'pets',
-        'endereco',
+
         'uf',
         'cidade',
-        'bairro',
       ],
       // keys do req.body que serão usados no update
       update: [
@@ -35,10 +34,9 @@ class InstitutionController extends BaseController<
         'valido',
         'termo',
         'pets',
-        'endereco',
+
         'uf',
         'cidade',
-        'bairro',
       ],
     });
   }

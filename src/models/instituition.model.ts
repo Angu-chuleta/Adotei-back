@@ -12,10 +12,8 @@ export interface IInstitutionModel extends Document {
   valido: boolean;
   termo: string;
   pets: Array<IPetModel>;
-  endereco: string;
   uf: string;
   cidade: string;
-  bairro: string;
 }
 
 const InstitutionSchema = new Schema<IInstitutionModel>({
@@ -55,19 +53,11 @@ const InstitutionSchema = new Schema<IInstitutionModel>({
     type: [PetSchema],
     default: [],
   },
-  endereco: {
-    type: String,
-    required: true,
-  },
   uf: {
     type: String,
     required: true,
   },
   cidade: {
-    type: String,
-    required: true,
-  },
-  bairro: {
     type: String,
     required: true,
   },

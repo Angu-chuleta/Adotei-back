@@ -33,7 +33,7 @@ const router = Router();
 /**
  * @swagger
  *
- * /login:
+ * /auth/login:
  *   post:
  *     description: login
  *     produces:
@@ -46,12 +46,12 @@ const router = Router();
  *           items:
  *             $ref: '#/definitions/User'
  */
-router.post('/login', authController.getOne);
+router.post('/auth/login', authController.login);
 
 /**
  * @swagger
  *
- * /change-password:
+ * /auth/change-password:
  *   post:
  *     description: change the password
  *     produces:
@@ -60,6 +60,22 @@ router.post('/login', authController.getOne);
  *       200:
  *         description:  sucess
  */
-router.post('/change-password', [checkJwt], authController.changePassword);
+router.post('/auth/change-password', [checkJwt], authController.changePassword);
+/**
+ * @swagger
+ *
+ * /auth/new:
+ *   post:
+ *     description: create new user
+ *     produces:
+ *       - application/jsong
+ *     responses:
+ *       200:
+ *         description:  sucess
+ */
+router.post('/auth/new', authController.newUser);
+
+router.get('/auth/list', authController.getAll);
+router.delete('/auth/:id', authController.delete);
 
 export default router;
