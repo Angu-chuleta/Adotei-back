@@ -29,5 +29,7 @@ const swag = require('../../swagger.json');
 app.use('/docs', serve, setup(swag));
 app.use(bodyParser.json());
 app.use(cors());
+
 app.use(helmet());
+
 app.use(routes);
