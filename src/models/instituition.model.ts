@@ -2,7 +2,7 @@ import { Schema, model, Document } from 'mongoose';
 import { IPetModel } from 'models';
 import { PetSchema } from './pet.model';
 
-export interface IInstituitionModel extends Document {
+export interface IInstitutionModel extends Document {
   name: string;
   foto: string;
   email: string;
@@ -14,7 +14,7 @@ export interface IInstituitionModel extends Document {
   pets: Array<IPetModel>;
 }
 
-const InstituitionSchema = new Schema<IInstituitionModel>({
+const InstitutionSchema = new Schema<IInstitutionModel>({
   name: {
     type: String,
     required: true,
@@ -53,4 +53,4 @@ const InstituitionSchema = new Schema<IInstituitionModel>({
   },
 });
 
-export default model<IInstituitionModel>('Instituition', InstituitionSchema);
+export default model<IInstitutionModel>('Institution', InstitutionSchema);

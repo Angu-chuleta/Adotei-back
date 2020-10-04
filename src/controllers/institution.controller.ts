@@ -1,9 +1,9 @@
 import { institutionService, InstitutionService } from '../services';
 import { BaseController } from './base.controller';
-import { IInstituitionModel } from '../models';
+import { IInstitutionModel } from '../models';
 
-class InstituitionController extends BaseController<
-  IInstituitionModel,
+class InstitutionController extends BaseController<
+  IInstitutionModel,
   InstitutionService
 > {
   constructor() {
@@ -36,4 +36,4 @@ class InstituitionController extends BaseController<
   }
 }
 
-export const instituitionController = new InstituitionController();
+export const institutionController = new InstitutionController();

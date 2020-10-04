@@ -1,8 +1,8 @@
 import { BaseService } from './base.service';
-import { InstituitionModel, IInstituitionModel } from '../models';
+import { InstitutionModel, IInstitutionModel } from '../models';
 
-export class InstitutionService extends BaseService<IInstituitionModel> {
+export class InstitutionService extends BaseService<IInstitutionModel> {
   constructor() {
-    super(InstituitionModel);
+    super(InstitutionModel);
   }
 }
