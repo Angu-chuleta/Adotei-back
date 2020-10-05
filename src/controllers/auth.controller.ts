@@ -27,11 +27,11 @@ class AuthController extends BaseController<IAuthModel, AuthService> {
   newUser = async (req: Request, res: Response) => {
     //Get parameters from the body
     try {
-      const { username, password, role } = req.body;
+      const { username, password, role, user } = req.body;
 
-      if (username !== null && password !== null && role > 0) {
-        let user = await authService.newUser(username, password, role);
-        res.send(user);
+      if (username !== null && password !== null && user !== null) {
+        let auth = await authService.newUser(username, password, role, user);
+        res.send(auth);
       } else {
         res.status(400).send({ message: 'Objeto inválido' });
       }

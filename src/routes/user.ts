@@ -40,43 +40,4 @@ routes.get('/user', [checkJwt], userController.getAll);
  *         description: user
  */
 routes.get('/user/:id', [checkJwt], userController.getOne);
-/**
- * @swagger
- *
- * /user/:id:
- *   put:
- *     description: user
- *     produces:
- *       - application/jsong
- *     responses:
- *       200:
- *         description: user
- */
-routes.put('/user/:id', [checkJwt], userController.update);
-/**
- * @swagger
- *
- * /user/:id:
- *   delete:
- *     description: user
- *     produces:
- *       - application/jsong
- *     responses:
- *       200:
- *         description: user
- */
-routes.delete('/user/:id', [checkJwt], userController.delete);
-/**
- * @swagger
- *
- * /user:
- *   post:
- *     description: user
- *     produces:
- *       - application/jsong
- *     responses:
- *       200:
- *         description: user
- */
-routes.post('/user', userController.create);
 export default routes;
