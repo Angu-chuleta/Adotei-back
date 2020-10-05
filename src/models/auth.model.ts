@@ -3,6 +3,7 @@ export interface IAuthModel extends Document {
   username: string;
   password: string;
   role: number;
+  user: string;
 }
 
 const AuthSchema = new Schema<IAuthModel>({
@@ -14,6 +15,7 @@ const AuthSchema = new Schema<IAuthModel>({
     type: String,
     required: true,
   },
+  user: { type: String, required: false },
   role: { type: Number, required: true },
 });
 
