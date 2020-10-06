@@ -15,7 +15,7 @@ export class UserService extends BaseService<IUserModel> {
       user.credito = user.credito + credit;
     }
     try {
-      await this.BaseModel.updateOne({ id: id }, user);
+      await this.BaseModel.updateOne({ _id: id }, user);
       return { message: 'ok!' };
     } catch (error) {
       throw error;
