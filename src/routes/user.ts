@@ -49,5 +49,5 @@ routes.get('/user/:id', [checkJwt], userController.getOne);
  *       200:
  *         description: user
  */
-routes.put('/user/:id/addcredit', [checkJwt], userController.addCredit);
+routes.post('/user/:id/addcredit', [checkJwt], userController.addCredit);
 export default routes;
