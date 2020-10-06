@@ -71,7 +71,11 @@ router.post('/auth/change-password', [checkJwt], authController.changePassword);
  *       - application/jsong
  *     responses:
  *       200:
- *         description:  sucess
+ *          description: users
+ *          schema:
+ *           type: array
+ *           items:
+ *             $ref: '#/definitions/User'
  */
 router.post('/auth/new', authController.newUser);
 

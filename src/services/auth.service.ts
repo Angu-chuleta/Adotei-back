@@ -21,7 +21,13 @@ export class AuthService extends BaseService<IAuthModel> {
           authConfig.jwtSecret,
           { expiresIn: '90d' },
         );
-        return { message: 'sucess', token: token };
+        let perfil;
+        try {
+          perfil = await UserModel.findById(user.user).exec();
+        } catch (error) {
+          perfil = {};
+        }
+        return { token: token, user: perfil };
       } else {
         throw { message: 'usuário ou senhas não correspondem' };
       }
@@ -54,6 +60,7 @@ export class AuthService extends BaseService<IAuthModel> {
     }
     try {
       try {
+        perfil.credito = 0;
         const newPerfil = await UserModel.create(perfil);
         user.user = newPerfil.id;
       } catch (error) {
