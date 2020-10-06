@@ -11,17 +11,7 @@ const routes = Router();
  *     description: get a user
  *     produces:
  *       - application/json
- *     parameters:
- *       - name: username
- *         description: Username to use for login.
- *         in: formData
- *         required: true
- *         type: string
- *       - name: password
- *         description: User's password.
- *         in: formData
- *         required: true
- *         type: string
+
  *     responses:
  *       200:
  *         description: login
@@ -40,4 +30,24 @@ routes.get('/user', [checkJwt], userController.getAll);
  *         description: user
  */
 routes.get('/user/:id', [checkJwt], userController.getOne);
+/**
+ * @swagger
+ *
+ * /user/:id/addcredit:
+ *   put:
+ *     description: add credit to user
+ *     produces:
+ *       - application/jsong
+ *     parameters:
+ 
+ *       - name: credito
+ *         description: credito que será adicionado
+ *         in: formData
+ *         required: true
+ *         type: number
+ *     responses:
+ *       200:
+ *         description: user
+ */
+routes.put('/user/:id/addcredit', [checkJwt], userController.addCredit);
 export default routes;
