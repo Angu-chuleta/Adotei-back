@@ -26,7 +26,7 @@ routes.use(pet);
  *       200:
  *         description: ping
  */
-routes.get('/', pingController.ping);
+routes.get('/ping', pingController.ping);
 
 routes.get('/*', pingController.error);
 

@@ -31,7 +31,8 @@ if (NODE_ENV === 'development') {
 }
 
 connectDb();
-
+app.use(express.static('public'));
+app.use('/', express.static('public'));
 app.use('/docs', serve, setup(swag));
 app.use(bodyParser.json());
 app.use(cors());
