@@ -40,10 +40,6 @@ jobs:
           command: curl https://cli-assets.heroku.com/install.sh | sh
 
       - run:
-          name: inserindo variavel de ambiente
-          command: export HEROKU_API_KEY=$HEROKU_API_KEY
-
-      - run:
           name: heroku container registry login
           command: heroku container:login
 
