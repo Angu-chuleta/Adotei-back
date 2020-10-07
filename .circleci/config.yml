@@ -18,9 +18,9 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
-      #   - run:
-      #       name: test
-      #       command: npm run test
+        - run:
+            name: test
+            command: npm run test
 
       - setup_remote_docker:
           version: 19.03.13
@@ -38,9 +38,6 @@ jobs:
       - run:
           name: Heroku install
           command: curl https://cli-assets.heroku.com/install.sh | sh
-      - run:
-          name: heroku login
-          command: heroku login
 
       - run:
           name: heroku container registry login
