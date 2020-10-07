@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/app
     docker:
       - image: circleci/node:10.16.3
-      steps:
+    steps:
         - checkout
         - run:
             name: update-npm
@@ -22,34 +22,34 @@ jobs:
       #       name: test
       #       command: npm run test
 
-      - setup_remote_docker:
-          version: 19.03.13
-      - run:
-          name: docker login
-          command: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-      - run:
-          name: docker build
-          command: docker build -t $DOCKER_USER/adotei-back:latest .
+        - setup_remote_docker:
+            version: 19.03.13
+        - run:
+            name: docker login
+            command: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+        - run:
+            name: docker build
+            command: docker build -t $DOCKER_USER/adotei-back:latest .
 
-      - run:
-          name: docker push
-          command: docker push $DOCKER_USER/adotei-back:latest
+        - run:
+            name: docker push
+            command: docker push $DOCKER_USER/adotei-back:latest
 
-      - run:
-          name: Heroku install
-          command: curl https://cli-assets.heroku.com/install.sh | sh
-      - run:
-          name: heroku login
-          command: heroku auth:token HEROKU_API_KEY
+        - run:
+            name: Heroku install
+            command: curl https://cli-assets.heroku.com/install.sh | sh
+        - run:
+            name: heroku login
+            command: heroku auth:token HEROKU_API_KEY
 
-      - run:
-          name: heroku container registry login
-          command: heroku container:login
+        - run:
+            name: heroku container registry login
+            command: heroku container:login
 
-      - run:
-          name: heroku container:push web
-          command: heroku container:push web -a adotei-back
+        - run:
+            name: heroku container:push web
+            command: heroku container:push web -a adotei-back
 
-      - run:
-          name: Subir o container para o server
-          command: heroku container:release web -a adotei-back
+        - run:
+            name: Subir o container para o server
+            command: heroku container:release web -a adotei-back
