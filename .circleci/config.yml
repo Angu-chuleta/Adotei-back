@@ -26,12 +26,31 @@ jobs:
           version: 19.03.13
           ##docker_layer_caching: true
       - run:
-          name: login
+          name: docker login
           command: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
       - run:
-          name: build
+          name: docker build
           command: docker build -t $DOCKER_USER/adotei-back:latest .
 
       - run:
-          name: push
+          name: docker push
           command: docker push $DOCKER_USER/adotei-back:latest
+
+      - run:
+          name: Heroku install
+          command: sudo snap install --classic heroku
+      - run:
+          name: heroku login
+          command: heroku auth:token HEROKU_API_KEY
+
+      - run:
+          name: heroku container registry login
+          command: heroku container:login
+
+      - run:
+          name: heroku container:push web
+          command: heroku container:push web -a adotei-back
+
+      - run:
+          name: Subir o container para o server
+          command: heroku container:release web -a adotei-back
