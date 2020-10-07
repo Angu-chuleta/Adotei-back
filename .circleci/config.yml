@@ -29,9 +29,9 @@ jobs:
           name: login
           command: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
       - run:
-          name: push
-          command: docker build -t company/app:$CIRCLE_BRANCH .
+          name: build
+          command: docker build -t $DOCKER_USER/adotei-back:latest .
 
       - run:
           name: push
-          command: docker push company/app:$CIRCLE_BRANCH
+          command: docker push $DOCKER_USER/adotei-back:latest
