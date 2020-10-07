@@ -10,24 +10,24 @@ export class AuthService extends BaseService<IAuthModel> {
   }
   async login(username: string, password: string) {
     try {
-      const user = await this.BaseModel.findOne({ username: username }).exec();
-      if (user && user.username != null && user.password != null) {
-        if (!this.checkIfPasswordIsValid(password, user.password)) {
+      const auth = await this.BaseModel.findOne({ username: username }).exec();
+      if (auth && auth.username != null && auth.password != null) {
+        if (!this.checkIfPasswordIsValid(password, auth.password)) {
           throw { message: 'usuário ou senhas não correspondem' };
         }
 
         const token = jwt.sign(
-          { userId: user.id, username: user.username },
+          { userId: auth.id, username: auth.username },
           authConfig.jwtSecret,
           { expiresIn: '90d' },
         );
-        let perfil;
+        let user;
         try {
-          perfil = await UserModel.findById(user.user).exec();
+          user = await UserModel.findById(auth.user).exec();
         } catch (error) {
-          perfil = {};
+          user = {};
         }
-        return { token: token, user: perfil };
+        return { token: token, role: auth.role, user: user };
       } else {
         throw { message: 'usuário ou senhas não correspondem' };
       }
