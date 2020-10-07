@@ -1,9 +1,17 @@
-FROM node:12-slim
+FROM node:12
+
+WORKDIR /front
+RUN apt-get install git
+RUN git clone https://github.com/Angu-chuleta/Adotei-front.git
+WORKDIR /front/Adotei-front
+RUN npm i
+RUN npm run build
 
 WORKDIR /usr/src/app
+COPY . .
+RUN npm run build
+RUN cp -r /front/Adotei-front/build/* /usr/src/app/public
 
-COPY package.json .
-ADD ./dist /usr/src/app/dist
 
-CMD [ "npm", "start:prod" ]
+CMD [ "npm", "run","start:prod" ]
 EXPOSE 3000

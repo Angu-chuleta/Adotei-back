@@ -28,6 +28,6 @@ routes.use(pet);
  */
 routes.get('/ping', pingController.ping);
 
-routes.get('/*', pingController.error);
+// routes.get('/*', pingController.error);
 
 export default routes;

@@ -11,7 +11,7 @@ export class UserService extends BaseService<IUserModel> {
     } catch (error) {
       throw { message: 'Usuário inexistente' };
     }
-    if (user && user.credito) {
+    if (user && user.credito !== null) {
       user.credito = user.credito + credit;
     }
     try {
