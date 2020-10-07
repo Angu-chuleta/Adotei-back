@@ -23,4 +23,4 @@ jobs:
           command: npm run test
       - run:
           name: build
-          command: docker build --tag Adotei-back:latest .
+          command: docker build --tag adotei-back:latest .
