@@ -1,7 +1,7 @@
 import request from 'supertest';
 import { app } from '../src/main';
 
-describe('GET /user', () => {});
+// describe('GET /user', () => {});
 
 describe('CRUD user', () => {
   const user = {
@@ -13,35 +13,22 @@ describe('CRUD user', () => {
     credito: 100,
   };
 
-  // let user_id = '';
-  // it('create user', async () => {
-  //   const res = await request(app)
-  //     .post('/user')
-  //     .set('Accept', 'application/json')
-  //     .send(user);
-  //   expect(res.status).toBe(201);
-  //   expect(res.body).toMatchObject(user);
+  const authUser = {
+    username: 'tester',
+    password: 'test',
+    role: 2,
+    user: user,
+  };
 
-  //   user_id = res.body._id;
-  // });
+  let user_id = '';
+  it('create user error já existe', async () => {
+    const res = await request(app)
+      .post('/auth/new')
+      .set('Accept', 'application/json')
+      .send(authUser);
+    expect(res.status).toBe(400);
+    //expect(res.body).toMatchObject(user);
 
-  // it('get the user', done => {
-  //   request(app)
-  //     .get(`/user/${user_id}`)
-  //     .set('Accept', 'application/json')
-  //     .expect('Content-Type', /json/)
-  //     .expect(200, done);
-  // });
-  // it('update user', async () => {
-  //   const res = await request(app)
-  //     .put(`/user/${user_id}`)
-  //     .send({ ...user, name: 'bugguer da silva' });
-  //   expect(res.status).toBe(200);
-  // });
-  // it('delete user', async () => {
-  //   const res = await request(app)
-  //     .delete(`/user/${user_id}`)
-  //     .set('Accept', 'application/json');
-  //   expect(res.status).toBe(200);
-  // });
+    user_id = res.body._id;
+  });
 });

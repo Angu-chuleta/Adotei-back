@@ -1,10 +1,10 @@
 import request from 'supertest';
 import { app } from '../src/main';
 
-describe('GET /instituition', () => { });
+// describe('GET /institution', () => { });
 
-describe('CRUD instituition', () => {
-  const instituition = {
+describe('CRUD institution', () => {
+  const institution = {
     name: 'bug orfanato',
     foto: 'logo.jpg',
     email: 'adote@gmail.com',
@@ -13,38 +13,53 @@ describe('CRUD instituition', () => {
     credito: 0,
     valido: true,
     termo: 'não doe para nós.',
+    pets: [],
+    uf: 'ES',
+    cidade: 'vix',
   };
+  let user = { username: 'admin', password: 'test' };
+  let token = '';
 
-  let instituition_id = '';
-  it('create instituition', async () => {
-    const res = await request(app)
-      .post('/instituition')
-      .set('Accept', 'application/json')
-      .send(instituition);
-    expect(res.status).toBe(201);
-    expect(res.body).toMatchObject(instituition);
-
-    instituition_id = res.body._id;
+  it('login first', async () => {
+    let res = await request(app).post('/auth/login').send(user);
+    token = res.body.token;
   });
 
-  it('get the instituition', done => {
-    request(app)
-      .get(`/instituition/${instituition_id}`)
+  let institution_id = '';
+
+  it('create institution', async () => {
+    const res = await request(app)
+      .post('/institution')
       .set('Accept', 'application/json')
+      .set('auth', token)
+      .send(institution);
+    expect(res.status).toBe(201);
+    //expect(res.body).toMatchObject(institution);
+
+    institution_id = res.body._id;
+  });
+
+  it('get the institution', (done) => {
+    request(app)
+      .get(`/institution/${institution_id}`)
+      .set('Accept', 'application/json')
+      .set('auth', token)
       .expect('Content-Type', /json/)
       .expect(200, done);
   });
-  it('update instituition', async () => {
+  it('update institution', async () => {
     const res = await request(app)
-      .put(`/instituition/${instituition_id}`)
-      .send({ ...instituition, credito: 100 });
+      .put(`/institution/${institution_id}`)
+      .set('auth', token)
+      .send({ ...institution, credito: 100 });
 
     expect(res.status).toBe(200);
     //expect(res.body.credito).toBe(100);
   });
-  it('delete instituition', async () => {
+  it('delete institution', async () => {
     const res = await request(app)
-      .delete(`/instituition/${instituition_id}`)
+      .delete(`/institution/${institution_id}`)
+      .set('auth', token)
       .set('Accept', 'application/json');
     expect(res.status).toBe(200);
   });
