@@ -35,18 +35,22 @@ jobs:
           name: docker push
           command: docker push $DOCKER_USER/adotei-back:latest
 
-      - run:
-          name: Heroku install
-          command: curl https://cli-assets.heroku.com/install.sh | sh
+    #   - run:
+    #       name: Heroku install
+    #       command: curl https://cli-assets.heroku.com/install.sh | sh
 
-      - run:
-          name: heroku container registry login
-          command: heroku container:login
+    #   - run:
+    #       name: inserindo variavel de ambiente
+    #       command: export HEROKU_API_KEY=  $HEROKU_API_KEY
 
-      - run:
-          name: heroku container:push web
-          command: heroku container:push web -a adotei-back
+    #   - run:
+    #       name: heroku container registry login
+    #       command: heroku container:login
 
-      - run:
-          name: Subir o container para o server
-          command: heroku container:release web -a adotei-back
+    #   - run:
+    #       name: heroku container:push web
+    #       command: heroku container:push web -a adotei-back
+
+    #   - run:
+    #       name: Subir o container para o server
+    #       command: heroku container:release web -a adotei-back
