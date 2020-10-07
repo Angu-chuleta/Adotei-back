@@ -69,6 +69,6 @@ routes.delete('/pet/:id', [checkJwt, checkRole(admin)], petController.delete);
  *       200:
  *         description: pet
  */
-routes.post('/pet', [checkJwt, checkRole(admin)], petController.create);
+routes.post('/pet', [checkJwt], petController.create);
 
 export default routes;

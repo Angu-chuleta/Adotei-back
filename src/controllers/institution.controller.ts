@@ -19,7 +19,6 @@ class InstitutionController extends BaseController<
         'valido',
         'termo',
         'pets',
-
         'uf',
         'cidade',
       ],

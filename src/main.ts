@@ -12,7 +12,9 @@ export const app = express();
 let swag;
 const { NODE_ENV } = process.env;
 
-if (NODE_ENV === 'development') {
+if (NODE_ENV === 'production') {
+  swag = require('../../swagger.json');
+} else {
   const options: SwaggerDefinition = {
     definition: {
       openapi: '3.0.0',
@@ -26,8 +28,6 @@ if (NODE_ENV === 'development') {
   };
   fs.writeFileSync('./swagger.json', JSON.stringify(swaggerJSDoc(options)));
   swag = require('../swagger.json');
-} else {
-  swag = require('../../swagger.json');
 }
 
 connectDb();
