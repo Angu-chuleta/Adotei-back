@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/app
     docker:
       - image: circleci/node:10.16.3
-      # steps:
+    steps:
       #   - checkout
       #   - run:
       #       name: update-npm
