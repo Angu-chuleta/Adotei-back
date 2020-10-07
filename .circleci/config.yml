@@ -24,14 +24,14 @@ jobs:
 
       - setup_remote_docker:
           version: 19.03.13
-          docker_layer_caching: true
+          ##docker_layer_caching: true
       - run:
           name: login
           command: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin docker run -d --name db company/proprietary-db:1.2.3
       - run:
-          name: push 
+          name: push
           command: docker build -t company/app:$CIRCLE_BRANCH .
-          
-      - run: 
-          name: push 
+
+      - run:
+          name: push
           command: docker push company/app:$CIRCLE_BRANCH
