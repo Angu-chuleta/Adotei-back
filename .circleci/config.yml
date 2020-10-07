@@ -40,7 +40,7 @@ jobs:
           command: curl https://cli-assets.heroku.com/install.sh | sh
       - run:
           name: heroku login
-          command: heroku auth:token $HEROKU_API_KEY
+          command: heroku login
 
       - run:
           name: heroku container registry login
