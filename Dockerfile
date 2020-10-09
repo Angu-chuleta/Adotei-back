@@ -9,6 +9,7 @@ RUN npm run build
 
 WORKDIR /usr/src/app
 COPY . .
+RUN npm i
 RUN npm run build
 RUN cp -r /front/Adotei-front/build/* /usr/src/app/public
 
