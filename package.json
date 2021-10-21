@@ -32,7 +32,7 @@
     "@types/supertest": "^2.0.8",
     "@types/swagger-jsdoc": "^3.0.2",
     "coveralls": "^3.0.9",
-    "jest": "^25.5.4",
+    "jest": "^27.3.0",
     "jest-sonar-reporter": "^2.0.0",
     "sonarqube-scanner": "^2.7.0",
     "supertest": "^4.0.2",
