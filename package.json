@@ -58,7 +58,7 @@
     "reflect-metadata": "^0.1.13",
     "swagger-express-typescript": "^1.0.2",
     "swagger-jsdoc": "^4.2.0",
-    "swagger-ui-dist": "^3.35.0",
+    "swagger-ui-dist": "^4.1.3",
     "swagger-ui-express": "^4.1.4"
   }
 }
