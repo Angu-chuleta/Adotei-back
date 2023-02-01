@@ -54,7 +54,7 @@
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.4",
+    "mongoose": "^5.13.15",
     "reflect-metadata": "^0.1.13",
     "swagger-express-typescript": "^1.0.2",
     "swagger-jsdoc": "^4.2.0",
